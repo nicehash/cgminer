@@ -2015,6 +2015,9 @@ static char *opt_verusage_and_exit(const char *extra)
 #ifdef USE_ICARUS
 		"icarus "
 #endif
+#ifdef USE_GEKKO
+		"gekko "
+#endif
 #ifdef USE_KLONDIKE
 		"klondike "
 #endif
