@@ -370,6 +370,17 @@ if test "x$icarus" = xyes; then
 fi
 AM_CONDITIONAL([HAS_ICARUS], [test x$icarus = xyes])
 
+gekko="no"
+
+AC_ARG_ENABLE([gekko],
+	[AC_HELP_STRING([--enable-gekko],[Compile support for Gekko (default disabled)])],
+	[gekko=$enableval]
+	)
+if test "x$gekko" = xyes; then
+	AC_DEFINE([USE_GEKKO], [1], [Defined to 1 if Gekko support is wanted])
+	drivercount=x$drivercount
+fi
+AM_CONDITIONAL([HAS_GEKKO], [test x$gekko = xyes])
 
 klondike="no"
 
@@ -490,7 +501,7 @@ fi
 
 
 #Add a new device to this list if it needs libusb, along with a no on the end.
-if test x$avalon$avalon2$avalon4$avalon_miner$bitforce$bitfury$blockerupter$modminer$bflsc$icarus$hashfast$hashratio$klondike$drillbit$cointerra$ants1$ants3 != xnonononononononononononononononono; then
+if test x$avalon$avalon2$avalon4$avalon_miner$bitforce$bitfury$blockerupter$modminer$bflsc$icarus$hashfast$hashratio$klondike$drillbit$cointerra$ants1$ants3$gekko != xnonononononononononononononononono; then
 	want_usbutils=true
 else
 	want_usbutils=false
@@ -860,6 +871,12 @@ else
 	echo "  Icarus.ASICs/FPGAs...: Disabled"
 fi
 
+if test "x$gekko" = xyes; then
+	echo "  Gekko.ASICs..........: Enabled"
+else
+	echo "  Gekko.ASICs..........: Disabled"
+fi
+
 if test "x$klondike" = xyes; then
 	echo "  Klondike.ASICs.......: Enabled"
 else
@@ -879,7 +896,7 @@ else
 fi
 
 #Add any new device to this, along with a no on the end of the test
-if test "x$avalon$avalon2$avalon4$avalon_miner$bab$bflsc$bitforce$bitfury$blockerupter$hashfast$hashratio$icarus$klondike$knc$modminer$drillbit$minion$cointerra$bitmine_A1$ants1$ants2$ants3$sp10$sp30" = xnononononononononononononononononononononononono; then
+if test "x$avalon$avalon2$avalon4$avalon_miner$bab$bflsc$bitforce$bitfury$blockerupter$hashfast$hashratio$icarus$klondike$knc$modminer$drillbit$minion$cointerra$bitmine_A1$ants1$ants2$ants3$sp10$sp30$gekko" = xnononononononononononononononononononononononono; then
 	echo
 	AC_MSG_ERROR([No mining devices configured in])
 	echo
