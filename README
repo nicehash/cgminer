@@ -135,6 +135,7 @@ CGMiner specific configuration options:
                           disabled)
   --enable-hashfast       Compile support for Hashfast (default disabled)
   --enable-icarus         Compile support for Icarus (default disabled)
+  --enable-gekko          Compile support for Gekko (default disabled)
   --enable-klondike       Compile support for Klondike (default disabled)
   --enable-knc            Compile support for KnC miners (default disabled)
   --enable-minion         Compile support for Minion BlackArrow ASIC (default
@@ -384,6 +385,7 @@ ASIC only options:
 --hro-freq          Set the hashratio clock frequency (default: 280)
 --klondike-options <arg> Set klondike options clock:temptarget
 --rock-freq <arg>   Set RockMiner frequency in MHz, range 125-500 (default: 270)
+--compac-freq <arg> Set GekkoScience Compac frequency in MHz, range 100-500 (default: 125.0)
 
 See ASIC-README for more information regarding these.
 
@@ -1065,6 +1067,7 @@ USB on any hardware are the following:
 --enable-hashratio
 --enable-icarus
 --enable-klondike
+--enable-gekko
 
 ---
 

@@ -248,6 +248,7 @@ static inline int fsync (int fd)
 	DRIVER_ADD_COMMAND(hashfast) \
 	DRIVER_ADD_COMMAND(hashratio) \
 	DRIVER_ADD_COMMAND(icarus) \
+	DRIVER_ADD_COMMAND(gekko) \
 	DRIVER_ADD_COMMAND(klondike) \
 	DRIVER_ADD_COMMAND(knc) \
 	DRIVER_ADD_COMMAND(bitmineA1) \
@@ -1007,6 +1008,11 @@ extern float opt_anu_freq;
 extern float opt_au3_freq;
 extern int opt_au3_volt;
 extern float opt_rock_freq;
+#endif
+#ifdef USE_GEKKO
+extern char *opt_gekko_options;
+extern char *opt_gekko_timing;
+extern float opt_compac_freq;
 #endif
 extern bool opt_worktime;
 #ifdef USE_AVALON
