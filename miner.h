@@ -1012,10 +1012,7 @@ extern float opt_rock_freq;
 #ifdef USE_GEKKO
 extern char *opt_gekko_options;
 extern char *opt_gekko_timing;
-extern float opt_anu_freq;
 extern float opt_compac_freq;
-
-extern float opt_rock_freq;
 #endif
 extern bool opt_worktime;
 #ifdef USE_AVALON
